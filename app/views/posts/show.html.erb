@@ -1,6 +1,4 @@
-<header>
-  <%= render 'shared/header'%>
-</header>
+
 
 <style>
   body {
@@ -9,55 +7,29 @@
 }
 </style>
 
-
-
 <body>
-<div class="container">
-  <form>
-    <div class="form-group">
-      <label for="name">パートナー名</label>
-      <input type="text" class="form-control" id="name" placeholder="パーナー名">
-    </div>
-    <div class="form-group">
-      <label for="mail">タイトル</label>
-      <input type="email" class="form-control" id="mail" placeholder="タイトル">
-    </div>
+  <div class="container-fluid mb-5">
+    <div class="row">
+      <div class="col">
+        <div class="card img-thumbnail">
+          <img class="card-img-top" src="https://pakutaso.cdn.rabify.me/shared/img/thumb/AMEMAN130019.jpg?d=500" alt="">
+          <div class="card-body px-2 py-3">
+            <h5 class="card-title display-4">東北旅行でしっぽり</h5>
+            <p class="card-text">
+            夫が出張で居なかったので、ワンちゃんとしっぽり旅行してきました<br>
+            ここは旅館でありながら、ワンチャンと一緒に泊まれるという珍しいタイプの旅館！！
 
-    <div class="form-group">
-      <label for="file">ファイル（複数選択可）</label>
-        <div id="file" class="input-group">
-          <div class="custom-file">
-            <input type="file" id="cutomfile" class="custom-file-input" name="cutomfile[]" multiple />
-            <label class="custom-file-label" for="customfile" data-browse="参照">ファイル選択...</label>
+            </p>
           </div>
-        <div class="input-group-append">
-            <button type="button" class="btn btn-secondary reset">取消</button>
         </div>
       </div>
     </div>
-
-    <div class="form-group h-200">
-      <label for="comment">コメント</label>
-      <textarea class="form-control" id="comment" rows="3" placeholder="コメントを入力してください"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">送信する</button>
-  </form>
   </div>
-
-
-
-
-
-
-
-
-
 </body>
 
 <footer>
   <%= render 'shared/footer'%>
 </footer>
-
 
 
 

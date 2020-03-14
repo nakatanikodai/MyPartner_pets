@@ -1,0 +1,58 @@
+
+<style>
+  body {
+  background: linear-gradient(-45deg, rgba(0, 255, 76, 0.8), rgba(136, 255, 0, 0.8)) fixed, url(https://cdn.pixabay.com/photo/2016/01/19/17/41/friends-1149841__480.jpg) fixed;
+  background-size: cover;
+}
+</style>
+
+
+
+<body>
+<div class="container">
+  <form>
+    <div class="form-group">
+      <label for="name">パートナー名</label>
+      <input type="text" class="form-control" id="name" placeholder="パーナー名">
+    </div>
+    <div class="form-group">
+      <label for="mail">タイトル</label>
+      <input type="text" class="form-control"  placeholder="タイトル">
+    </div>
+
+    <div class="form-group">
+      <label for="file">ファイル（複数選択可）</label>
+        <div id="file" class="input-group">
+          <div class="custom-file">
+            <input type="file" id="cutomfile" class="custom-file-input" name="cutomfile[]" multiple />
+            <label class="custom-file-label" for="customfile" data-browse="参照">ファイル選択...</label>
+          </div>
+        <div class="input-group-append">
+            <button type="button" class="btn btn-secondary reset">取消</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group h-200">
+      <label for="comment">コメント</label>
+      <textarea class="form-control" id="comment" rows="3" placeholder="コメントを入力してください"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">送信する</button>
+  </form>
+  </div>
+
+
+
+
+
+
+
+
+
+</body>
+
+<footer>
+  <%= render 'shared/footer'%>
+</footer>
+
+
