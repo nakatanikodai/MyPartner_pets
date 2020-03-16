@@ -9,17 +9,20 @@
 
 
 <body>
+
 <div class="container">
+<%= form_with model: @post, local: true do |form| %>
   <form action="http://localhost:3000/posts/new" method="post">
     <div class="form-group">
+    <% form.text_field :content %>
       <label for="name">パートナー名</label>
       <input type="text" class="form-control" id="name" placeholder="パーナー名">
     </div>
     <div class="form-group">
-      <label for="mail">タイトル</label>
+    <% form.text_field :content %>
+      <label for="name">タイトル</label>
       <input type="text" class="form-control"  placeholder="タイトル">
     </div>
-
     <div class="form-group">
       <label for="file">ファイル（複数選択可）</label>
         <div id="file" class="input-group">
@@ -32,12 +35,16 @@
         </div>
       </div>
     </div>
-
     <div class="form-group h-200">
+    <% form.text_field :content %>
       <label for="comment">コメント</label>
       <textarea class="form-control" id="comment" rows="3" placeholder="コメントを入力してください"></textarea>
     </div>
-    <button type="submit" class="btn btn-success">送信する</button>
+    <% form.submit %>
+    <button type="submit" class="btn btn-success">
+      送信する
+    </button>
+  <% end %>
   </form>
   </div>
 </body>
