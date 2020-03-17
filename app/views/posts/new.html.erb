@@ -12,19 +12,22 @@
 
 <div class="container">
 <%= form_with model: @post, local: true do |form| %>
-  <form action="http://localhost:3000/posts/new" method="post">
+  <form action="http://localhost:3000/posts/create" method="post">
     <div class="form-group">
-    <% form.text_field :content %>
-      <label for="name">パートナー名</label>
-      <input type="text" class="form-control" id="name" placeholder="パーナー名">
+    <label for="partner">パートナー名</label>
+    <%=form.text_field :partner, placeholder: :パートナー名, class: :form__partner %>
+      
+      <!--<input type="text" class="form-control" id="partner" placeholder="パーナー名">-->
     </div>
     <div class="form-group">
-    <% form.text_field :content %>
-      <label for="name">タイトル</label>
-      <input type="text" class="form-control"  placeholder="タイトル">
+    <label for="title">タイトル</label>
+    <%= form.text_field :title, placeholder: :タイトル, class: :form__title %>
+      <!--<input type="text" class="form-control"  placeholder="タイトル">-->
     </div>
     <div class="form-group">
-      <label for="file">ファイル（複数選択可）</label>
+    <%= form.label :image, 'プロフィール画像' %>
+    <%= form.file_field :image %>
+      <!--<label for="file">ファイル（複数選択可）</label>
         <div id="file" class="input-group">
           <div class="custom-file">
             <input type="file" id="cutomfile" class="custom-file-input" name="cutomfile[]" multiple />
@@ -33,12 +36,12 @@
         <div class="input-group-append">
             <button type="button" class="btn btn-secondary reset">取消</button>
         </div>
-      </div>
+      </div>-->
     </div>
     <div class="form-group h-200">
-    <% form.text_field :content %>
-      <label for="comment">コメント</label>
-      <textarea class="form-control" id="comment" rows="3" placeholder="コメントを入力してください"></textarea>
+    <%= form.text_area :content, placeholder: :コメント, class: :form__text %>
+      <label for="content">コメント</label>
+      <!--<textarea class="form-control" id="content" rows="3" placeholder="コメントを入力してください"></textarea>-->
     </div>
     <% form.submit %>
     <button type="submit" class="btn btn-success">

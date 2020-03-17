@@ -15,17 +15,22 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @user = User.find(paams[:id])
+    @post = Post.find(params[:id])
   end
 
   def show
+    @post = Post.find(params[:id])
+  end
+
+  def destroy
+
   end
 
 
 
   private
   def post_params
-    params.permit(:title, :image, :content, :partner)
+    params.require(:post).permit(:title, :image, :content, :partner)
   end
   
 end

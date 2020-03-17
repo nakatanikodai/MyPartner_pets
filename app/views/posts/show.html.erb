@@ -14,10 +14,9 @@
         <div class="card img-thumbnail">
           <img class="card-img-top" src="https://pakutaso.cdn.rabify.me/shared/img/thumb/AMEMAN130019.jpg?d=500" alt="">
           <div class="card-body px-2 py-3">
-            <h5 class="card-title display-4">東北旅行でしっぽり</h5>
+            <h5 class="card-title display-4"><%= @post.title%></h5>
             <p class="card-text">
-            夫が出張で居なかったので、ワンちゃんとしっぽり旅行してきました<br>
-            ここは旅館でありながら、ワンチャンと一緒に泊まれるという珍しいタイプの旅館！！
+            <%= simple_format @post.content%>
 
             </p>
           </div>
