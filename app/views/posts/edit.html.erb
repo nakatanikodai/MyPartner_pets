@@ -1,21 +1,32 @@
-<div class="form-group">
-<%= @post.label :partner, 'パートナー名' %>
-<%= @post.text_field :partner, class: 'form-control' %>
-</div>
- 
-<div class="form-group">
-<%= @post.label :title, 'タイトル' %>
-<%= @post.email_field :title, class: 'form-control' %>
-</div>
+<style>
+  body {
+  background: linear-gradient(-45deg, rgba(0, 255, 76, 0.8), rgba(136, 255, 0, 0.8)) fixed, url(https://cdn.pixabay.com/photo/2016/01/19/17/41/friends-1149841__480.jpg) fixed;
+  background-size: cover;
+}
+</style>
 
-<div class="form-group">
-<%= @post.label :content, 'コメント' %>
-<%= @post.email_field :content, class: 'form-control' %>
-</div>
- 
- 
-</div>
- 
-</div>
- 
-<div class="al-c"><%= @post.submit '更新', class: 'btn btn-primary' %></div>
+<body>
+<%= form_tag("/posts/#{@post.id}/update") do %>
+
+<form>
+  <div class="form-group">
+   <label for="exampleInputEmail1">パートナー名を編集</label>
+   <textarea name="partner" class="form-control"><%= @post.partner %></textarea>
+  </div>
+
+
+ <form>
+  <div class="form-group">
+   <label for="exampleInputEmail1">タイトルを編集</label>
+   <textarea name="title" class="form-control"><%= @post.title %></textarea>
+  </div><!--form-group-->
+
+  <div class="form-group">
+   <label for="exampleInputEmail1">内容を編集</label>
+   <textarea name="content" class="form-control"><%= @post.content %></textarea>
+  </div>
+
+
+  <button type="submit" class="btn btn-primary">保存</button>
+<% end %>
+</body>

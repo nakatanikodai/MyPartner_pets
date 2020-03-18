@@ -18,6 +18,10 @@
             <p class="card-text">
             <%= simple_format @post.content%>
 
+            <div>
+              <%= link_to "編集", edit_post_path(@post.id) %>
+            </div>
+
             </p>
           </div>
         </div>
