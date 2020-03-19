@@ -6,7 +6,7 @@
 </style>
 
 <body>
-<%= form_tag("/posts/#{@post.id}/update") do %>
+<%= form_tag({:controller => 'posts', :action => 'update'},{:method => :patch}) do %>
 
 <form>
   <div class="form-group">

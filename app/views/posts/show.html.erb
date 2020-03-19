@@ -14,12 +14,20 @@
         <div class="card img-thumbnail">
           <img class="card-img-top" src="https://pakutaso.cdn.rabify.me/shared/img/thumb/AMEMAN130019.jpg?d=500" alt="">
           <div class="card-body px-2 py-3">
-            <h5 class="card-title display-4"><%= @post.title%></h5>
+            <label for="partner" class="display-4 font-weight-bold text-success">タイトル</label><br>
+            <h5 class="card-title display-5"><%= @post.title%></h5>
             <p class="card-text">
-            <%= simple_format @post.content%>
+              <label for="partner" class="display-4 font-weight-bold text-success">パートナー名</label><br>
+            <p class="card-text font-weight-bold">
+              <%= @post.partner%>
+            <p class="card-text">
+            <label for="partner" class="display-4 font-weight-bold text-success">コメント</label><br>
+            <p class="card-text font-weight-bold">
+              <%= simple_format @post.content%>
 
             <div>
               <%= link_to "編集", edit_post_path(@post.id) %>
+              <%= link_to "削除", post_path(@post.id), method: :delete %>
             </div>
 
             </p>

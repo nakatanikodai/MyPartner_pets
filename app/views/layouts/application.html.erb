@@ -24,30 +24,46 @@ h1 {
   background-size: cover;
 }
 
+p {
+  font-size: 20px;
+  
+}
+
 </style>
 
 <h1 class=" container-fluid display-5 text-light" >
    <%= link_to "My Partner", posts_path %>
+
   <div class="row  input-group">
     <input type="text" class="col-10 form-control" placeholder="検索ワードを入力して下さい">
     <span class="input-group-btn">
       <button type="button" class="btn btn-default btn-success mb-4 mr-5  ">検索</button>
     </span>
 
-    <div class="col-2   dropdown">
+    <% if user_signed_in? %>
+    <div class="col-2   dropdown display-5">
     <!-- 切替ボタンの設定 -->
     <button type="button" class="mb-4 btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      ー
+    その他
     </button>
     <!-- ドロップメニューの設定 -->
     <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
       <a class="dropdown-item" href="#">マイページ</a>
       <a class="dropdown-item" href="#">アカウント編集</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="/posts/new">新規投稿</a>
-        
     </div><!-- /.dropdown-menu -->
   </div><!-- /.dropdown -->
+  </div>
+  <% end %>
+  
+  
+  <div class="display-5">
+    <% if user_signed_in? %>
+      <%= link_to"ログアウト", destroy_user_session_path, method: :delete, class: "text-light btn btn-success" %>
+      <%= link_to"新規投稿", new_post_path, class: "text-light btn btn-success" %>
+    <% else %>
+      <%= link_to "ログイン", new_user_session_path, class: "text-light btn btn-success "%>
+      <%= link_to"新規登録", new_user_registration_path, class: "text-light btn btn-success" %>
+    <% end %>
   </div>
 </h1>
   </header>
