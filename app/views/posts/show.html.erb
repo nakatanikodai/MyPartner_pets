@@ -25,16 +25,20 @@
             <p class="card-text font-weight-bold">
               <%= simple_format @post.content%>
 
-            <div>
-              <%= link_to "編集", edit_post_path(@post.id) %>
-              <%= link_to "削除", post_path(@post.id), method: :delete %>
-            </div>
+      <div class="display-5">
+        <% if user_signed_in? %>
+          <%= link_to "編集", edit_post_path(@post.id) %>
+          <%= link_to "削除", post_path(@post.id), method: :delete %>
+        <% else %>
+          <%= link_to"My Partnerを使ってみよう！！", new_user_registration_path, class: "text-light btn btn-success" %>
+        <% end %>
+      </div>
 
             </p>
           </div>
         </div>
       </div>
-    </div>
+  </div>
   </div>
 </body>
 
@@ -43,7 +47,10 @@
 </footer>
 
 
-
+<!--<div>
+  <%= link_to "編集", edit_post_path(@post.id) %>
+  <%= link_to "削除", post_path(@post.id), method: :delete %>
+</div>-->
 
 
 
