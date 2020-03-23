@@ -12,6 +12,7 @@
 
 <div class="container">
 <%= form_with model: @post, method: :post, local: true do |form| %>
+
     <div class="form-group">
     <label for="partner">パートナー名</label>
     <%=form.text_field :partner, placeholder: :パートナー名, class: :form__partner %>
@@ -25,7 +26,7 @@
     <%= form.file_field :image %>
     </div>
     <div class="form-group h-200">
-    <%= form.text_area :content, placeholder: :コメント, class: :form__text %>
+    <%= form.text_area :content,  placeholder: :コメント, class: :form__text %>
       <label for="content">コメント</label>
     </div>
     <% form.submit %>
