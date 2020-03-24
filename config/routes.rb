@@ -4,3 +4,5 @@ Rails.application.routes.draw do
   resources :posts, only: [:index, :new, :show, :edit, :update, :destroy]
   post 'posts', to: 'posts#index'
 end
+
+ff
