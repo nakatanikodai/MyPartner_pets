@@ -5,4 +5,4 @@ Rails.application.routes.draw do
   post 'posts', to: 'posts#index'
 end
 
-
+ｓ
