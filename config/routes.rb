@@ -6,4 +6,3 @@ Rails.application.routes.draw do
 end
 
 
-画像せんた
