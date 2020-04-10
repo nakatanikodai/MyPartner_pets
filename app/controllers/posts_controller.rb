@@ -44,5 +44,3 @@ class PostsController < ApplicationController
 end
 
 
-
-あｆ
