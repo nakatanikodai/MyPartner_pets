@@ -35,7 +35,7 @@
   <% @posts.each do |post| %>
     <div class="col-4 mb-4">
       <div class="card img-thumbnail">
-       <%= post.image %>
+        <%= image_tag post.image.to_s %>
         <div class="card-body px-2 py-3">
           <h5 class="card-title"><%= link_to post.title, post_path(post.id), class: "content__right__top--title" %></h5>
           <p class="card-text"><%= post.content%></p>
