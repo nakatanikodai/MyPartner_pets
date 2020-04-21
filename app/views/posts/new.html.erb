@@ -30,16 +30,6 @@
     <div class="form-group">
       <%= form.label :image, 'プロフィール画像' %>
       <%= form.file_field :image %>
-      <!--<label for="file">ファイル（複数選択可）</label>
-        <div id="file" class="input-group">
-          <div class="custom-file">
-            <input type="file" id="cutomfile" class="custom-file-input" name="cutomfile[]" multiple />
-            <label class="custom-file-label" for="customfile" data-browse="参照">ファイル選択...</label>
-          </div>
-        <div class="input-group-append">
-            <button type="button" class="btn btn-secondary reset">取消</button>
-        </div>
-      </div>-->
     </div>
     <div class="form-group h-200 w-40 ">
     <%= form.text_area :content, placeholder: :コメント, class: :form_text %>
