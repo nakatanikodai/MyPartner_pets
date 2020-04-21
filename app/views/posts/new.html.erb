@@ -4,6 +4,11 @@
   background: linear-gradient(-45deg, rgba(0, 255, 76, 0.8), rgba(136, 255, 0, 0.8)) fixed, url(https://cdn.pixabay.com/photo/2016/01/19/17/41/friends-1149841__480.jpg) fixed;
   background-size: cover;
 }
+
+.form_text{
+  width: 100%;
+  height: 300px;
+}
 </style>
 
 
@@ -13,11 +18,9 @@
 <div class="container">
 <%= form_with model: @post, local: true do |form| %>
   <form action="http://localhost:3000/posts/create" method="post">
-    <div class="form-group">
+    <div class="form-group w-40">
     <label for="partner">パートナー名</label>
-    <%=form.text_field :partner, placeholder: :パートナー名, class: :form__partner %>
-      
-      <!--<input type="text" class="form-control" id="partner" placeholder="パーナー名">-->
+    <%=form.text_field :partner, placeholder: :パートナー名 %>
     </div>
     <div class="form-group">
     <label for="title">タイトル</label>
@@ -25,8 +28,8 @@
       <!--<input type="text" class="form-control"  placeholder="タイトル">-->
     </div>
     <div class="form-group">
-    <%= form.label :image, 'プロフィール画像' %>
-    <%= form.file_field :image %>
+      <%= form.label :image, 'プロフィール画像' %>
+      <%= form.file_field :image %>
       <!--<label for="file">ファイル（複数選択可）</label>
         <div id="file" class="input-group">
           <div class="custom-file">
@@ -38,9 +41,9 @@
         </div>
       </div>-->
     </div>
-    <div class="form-group h-200">
-    <%= form.text_area :content, placeholder: :コメント, class: :form__text %>
-      <label for="content">コメント</label>
+    <div class="form-group h-200 w-40 ">
+    <%= form.text_area :content, placeholder: :コメント, class: :form_text %>
+      <label for="content"></label>
       <!--<textarea class="form-control" id="content" rows="3" placeholder="コメントを入力してください"></textarea>-->
     </div>
     <% form.submit %>
