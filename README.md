@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![ramenTimer](http://18.181.91.90:3000/)
 
-Things you may want to cover:
+<h2 align="center">MyPartner</h2>
 
-* Ruby version
 
-* System dependencies
+## 🌐 App URL
+### **http://18.181.91.90:3000/**
 
-* Configuration
+## 💬 Usage
+`https://github.com/nakatanikodai/MyPartner.git`
 
-* Database creation
+$ git clone https://github.com/aocattleya/hoge.git
+$ cd hoge
+$ bundle install
+$ rails db:create
+$ rails db:migrate
+$ rails s
+👉 http://localhost:3000
 
-* Database initialization
+## 📦 Features
+<h3 align="center">- PWA -</h3>
 
-* How to run the test suite
+<p align="center">
+  <img src="https://〜.jpg" width=40%>
+</p>
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
 
-* ...
