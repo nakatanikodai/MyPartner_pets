@@ -1,9 +1,6 @@
 # README
 
-![MyPartner](https://gyazo.com/b1ea1ee6ca0993eed9e424680ead8409)
-
 <h2 align="center">MyPartner</h2>
-
 
 ## 🌐 App URL
 ### **http://18.181.91.90:3000/**
@@ -11,20 +8,18 @@
 ## 💬 Usage
 `https://github.com/nakatanikodai/MyPartner.git`
 
-$ git clone https://github.com/aocattleya/hoge.git
-$ cd hoge
-$ bundle install
-$ rails db:create
-$ rails db:migrate
-$ rails s
-👉 http://localhost:3000
 
 ## 📦 Features
-<h3 align="center">- PWA -</h3>
+<h3 align="center">-  -</h3>
 
-<p align="center">
-  <img src="https://〜.jpg" width=40%>
-</p>
+## アプリについて
+自分の大切にしているパートナー（ペット）のお気に入りの写真を投稿し、
+多くの人に自慢する事が出来るアプリです。
 
+## 簡単な機能のご説明
+#### 画像投稿機能
+#### 投稿機能（タイトル、パートナー名、画像、コメント）
+#### ログイン機能
+#### ユーザー編集機能
 
 
