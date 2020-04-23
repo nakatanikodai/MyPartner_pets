@@ -1,5 +1,5 @@
 # README
-![MyPartner](https://d.kuku.lu/e3b42db017)
+![MyPartner](desktop/image)
 
 <h2 align="center">MyPartner</h2>
 
