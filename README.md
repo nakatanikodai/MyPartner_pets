@@ -1,6 +1,6 @@
 # README
 
-![ramenTimer](https://gyazo.com/aecf50ad2b638d54edca43195fcf82b8)
+![MyPartner](https://gyazo.com/b1ea1ee6ca0993eed9e424680ead8409)
 
 <h2 align="center">MyPartner</h2>
 
