@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   protect_from_forgery
   
   def index
-    @posts = Post.all.page(params[:page]).per(6)
+    @posts = Post.all.page(params[:page]).per(6).includes(:user)
   end
 
   def new
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:partner, :title, :image, :content )
+    params.require(:post).permit(:partner, :title, :image, :content ).merge(user_id: current_user.id)
   end
 end
 
