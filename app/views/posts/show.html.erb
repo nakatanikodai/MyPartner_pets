@@ -40,11 +40,10 @@
             <%= simple_format @post.content%>
 
       <div class="display-5">
-        <% if user_signed_in? %>
+        <% if user_signed_in? && current_user.id == @post.user_id %>
           <%= link_to "編集", edit_post_path(@post.id) %>
           <%= link_to "削除", post_path(@post.id), method: :delete %>
-        <% else %>
-          <%= link_to"My Partnerを使ってみよう！！", new_user_registration_path, class: "text-light btn btn-success" %>
+      
         <% end %>
       </div>
 
