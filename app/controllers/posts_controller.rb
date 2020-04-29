@@ -20,7 +20,7 @@ class PostsController < ApplicationController
 
   def update
     post = Post.find(params[:id])
-    post.update(post_params)
+    post.update(update_params)
     redirect_to post_path(post.id)
   end
 
@@ -39,6 +39,10 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:partner, :title, :image, :content ).merge(user_id: current_user.id)
+  end
+
+  def update_params
+    params.permit(:partner, :title, :image, :content ).merge(user_id: current_user.id)
   end
 end
 
