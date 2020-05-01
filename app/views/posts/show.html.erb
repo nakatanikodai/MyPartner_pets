@@ -53,6 +53,33 @@
       </div>
   </div>
   </div>
+
+  <div class="card img-thumbnail ml-5 mr-5 mb-5">
+    <div class="row">
+      <div class="col-md-12">
+        <% if current_user %>
+          <%= form_with(model: [@post, @comment], local: true) do |form| %>
+            <%= form.text_area :detail, placeholder: "コメントする", rows: "2", class: "col-md-12" %>
+            <%= form.submit "コメント送信" %>
+          <% end %>
+        <% else %>
+          <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+        <% end %>
+      </div>
+    </div>
+  </div><br>
+
+  <div class="card img-thumbnail ml-5 mr-5 mb-5">
+      <h4>＜コメント一覧＞</h4>
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <p>
+            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+            <%= comment.detail %>
+          </p>
+        <% end %>
+      <% end %>
+  </div>
 </body>
 
 <footer>
