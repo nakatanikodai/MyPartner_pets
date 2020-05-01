@@ -34,7 +34,7 @@ class PostsController < ApplicationController
       redirect_to root_path
   end
 
-4
+
 
   private
   def post_params
