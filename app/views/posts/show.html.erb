@@ -28,15 +28,17 @@
             <%= image_tag @post.image.to_s, class: "image" %>
         </div>
         <div class="card-body px-2 py-3">
-          <label for="partner" class="display-4 font-weight-bold text-success">タイトル</label><br>
+          <label for="partner" class="display-5 font-weight-bold text-success">ニックネーム</label><br>
+            <h5 class="card-title display-5"><%= @post.user.nickname %></h5>
+          <label for="partner" class="display-5 font-weight-bold text-success">タイトル</label><br>
           <h5 class="card-title display-5"><%= @post.title%></h5>
           <p class="card-text">
-            <label for="partner" class="display-4 font-weight-bold text-success">パートナー名</label><br>
-          <p class="card-text font-weight-bold">
+          <label for="partner" class="display-5 font-weight-bold text-success">パートナー名</label><br>
+          <p class="card-text">
             <%= @post.partner%>
           <p class="card-text">
-          <label for="partner" class="display-4 font-weight-bold text-success">コメント</label><br>
-          <p class="card-text font-weight-bold">
+          <label for="partner" class="display-5 font-weight-bold text-success">コメント・聞きたいこと</label><br>
+            <p class="card-text font-weight-bold">
             <%= simple_format @post.content%>
 
       <div class="display-5">
