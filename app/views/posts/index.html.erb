@@ -22,8 +22,8 @@
 <body>
   <div class="jumbotron jumbotron-fluid">
     <div class="container-fluid  ">
-      <h2 class="display-4 text-success font-weight-bold">もっと自慢しよう。</h1>
-      <p class="lead font-weight-bold">自分の可愛いパートナー<br>そんなパートナーの最高の瞬間を<br>みんなに共有しよう！！<br><br>さあ、自慢しよう
+      <h2 class="display-4 text-success font-weight-bold">もっと広げよう。</h1>
+      <p class="lead font-weight-bold">自分の可愛いパートナーを自慢したい。<br>パートナーに関する悩みを相談したい<br>そんな想いを共有しよう！！<br><br>さあ、繋がろう。
       </p>
       <% if user_signed_in? %>
         <a href="/posts/new" class="text-light btn btn-success">投稿する！</a>
@@ -44,7 +44,9 @@
         <%= image_tag post.image.to_s %>
         <div class="card-body px-2 py-3">
           <h5 class="card-title"><%= link_to post.title, post_path(post.id), class: "content__right__top--title" %></h5>
-          <p class="card-text"><%= post.content%></p>
+          
+          <p class="card-text"><%= post.content.truncate(10) %></p>
+          <!--<p class="card-text"><%= post.content%></p>-->
           <div class="h6 text-muted "><%= post.user.nickname %></div>
           <!--ユーザー名をクリックするとページに移行するようにしたい-->
           <p class="mb-0"><%=link_to "のぞいてみる", post_path(post.id), class: "btn btn-success btn-sm"%>
