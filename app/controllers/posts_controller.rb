@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   #before_action :move_to_idnex, except: [:index, :show, :search]
   
   def index
-    @posts = Post.all.page(params[:page]).per(6).includes(:user)
+    @posts = Post.all.page(params[:page]).per(12).includes(:user)
   end
 
   def new
