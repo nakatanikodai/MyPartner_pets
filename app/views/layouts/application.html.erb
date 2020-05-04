@@ -32,44 +32,53 @@ p {
 </style>
 
 <h1 class=" container-fluid display-5 text-light" >
-   <%= link_to "My Partner", posts_path %>
-
-  <div class="row  input-group">
-    <input type="text" class="col-10 form-control" placeholder="検索ワードを入力して下さい">
-    <span class="input-group-btn">
-      <button type="button" class="btn btn-default btn-success mb-4 mr-5  ">検索</button>
-    </span>
-
-    <% if user_signed_in? %>
-    <div class="col-2   dropdown display-5">
-    <!-- 切替ボタンの設定 -->
-    <button type="button" class="mb-4 btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    その他
-    </button>
-    <!-- ドロップメニューの設定 -->
-    <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
-      <%= link_to current_user.nickname, user_path(current_user), class: "header__right--btn" %><br><br>
-      <%= link_to "アカウントページ",edit_user_registration_path %>
-    </div><!-- /.dropdown-menu -->
-  </div><!-- /.dropdown -->
+<%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form col-md-6 ") do |form| %>
+  <%= link_to "My Partner", posts_path %>
+  <div class="row input-group">
+    <div class="col-md-10">
+      <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input  form-control" %>
+    </div>
+    <div class="col-md-2">
+      <%= form.submit "検索", class: "search-btn btn btn-default btn-success mb-4 mr-5 col-md- " %>
+    </div>
+<% end %>
   </div>
-  <% end %>
+
+
   
-  
-  <div class="display-5">
+
+  <div class="display-5 mt-3">
     <% if user_signed_in? %>
       <%= link_to"ログアウト", destroy_user_session_path, method: :delete, class: "text-light btn btn-success" %>
       <%= link_to"新規投稿", new_post_path, class: "text-light btn btn-success" %>
+      <button type="button" class=" btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          その他
+      </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <%= link_to current_user.nickname, user_path(current_user), class: "header__right--btn" %><br><br>
+    <%= link_to "アカウントページ",edit_user_registration_path %>
+  </div>
     <% else %>
       <%= link_to "ログイン", new_user_session_path, class: "text-light btn btn-success "%>
       <%= link_to"新規登録", new_user_registration_path, class: "text-light btn btn-success" %>
     <% end %>
+
+    
+      
+        
   </div>
-</h1>
+  
   </header>
   <body>
     <%= yield %>
   </body>
+
+
+</h1>
+
+
+
+
 
 <!--<footer>
   <footer>

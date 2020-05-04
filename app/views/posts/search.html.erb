@@ -1,0 +1,39 @@
+ <style>
+  body {
+  background: linear-gradient(-45deg, rgba(0, 255, 76, 0.8), rgba(136, 255, 0, 0.8)) fixed, url(https://cdn.pixabay.com/photo/2016/01/19/17/41/friends-1149841__480.jpg) fixed;
+  background-size: cover;
+}
+h1 {
+  background: linear-gradient(-45deg, rgba(0, 255, 76, 0.8), rgba(136, 255, 0, 0.8)) fixed, url(https://cdn.pixabay.com/photo/2016/01/19/17/41/friends-1149841__480.jpg) fixed;
+  background-size: cover;
+}
+
+p {
+  font-size: 20px;
+  
+}
+
+</style>
+
+
+<div class="body"><br><br>
+<div container>
+  <div class="row mx-2">
+  <% @posts.each do |post| %>
+    <div class="col-4 mb-4">
+      <div class="card img-thumbnail">
+        <%= image_tag post.image.to_s %>
+        <div class="card-body px-2 py-3">
+          <h5 class="card-title"><%= link_to post.title, post_path(post.id), class: "content__right__top--title" %></h5>
+          
+          <p class="card-text"><%= post.content.truncate(10) %></p>
+          <!--<p class="card-text"><%= post.content%></p>-->
+          <div class="h6 text-muted "><%= post.user.nickname %></div>
+          <!--ユーザー名をクリックするとページに移行するようにしたい-->
+          <p class="mb-0"><%=link_to "のぞいてみる", post_path(post.id), class: "btn btn-success btn-sm"%>
+        </div>
+      </div>   
+    </div>
+    <% end %>
+  </div>
+</div>

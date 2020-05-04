@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   resources :posts, only: [:index, :new, :create, :show, :edit, :update, :destroy] do
     resources :comments, only: :create
+    collection do
+      get 'search'
+    end
   end
   
   post 'posts', to: 'posts#index'

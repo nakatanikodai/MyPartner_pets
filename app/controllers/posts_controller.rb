@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   protect_from_forgery
+  #before_action :move_to_idnex, except: [:index, :show, :search]
   
   def index
     @posts = Post.all.page(params[:page]).per(6).includes(:user)
@@ -36,6 +37,9 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @posts = Post.search(params[:keyword])
+  end
 
 
   private
@@ -45,6 +49,10 @@ class PostsController < ApplicationController
 
   def update_params
     params.permit(:partner, :title, :image, :content ).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 end
 
