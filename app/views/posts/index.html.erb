@@ -6,6 +6,9 @@
   background-position: center 60%;
 }
 
+.card {
+  backgroud-color: red;
+}
   body {
   background: linear-gradient(-45deg, rgba(0, 255, 76, 0.8), rgba(136, 255, 0, 0.8)) fixed, url(https://cdn.pixabay.com/photo/2016/01/19/17/41/friends-1149841__480.jpg) fixed;
   background-size: cover;
@@ -39,7 +42,7 @@
 <div container>
   <div class="row mx-2">
   <% @posts.each do |post| %>
-    <div class="col-2">
+    <div class="col-3">
       <div class="card img-thumbnail">
         <%= image_tag post.image.to_s %>
         <div class="card-body px-2 py-3">
