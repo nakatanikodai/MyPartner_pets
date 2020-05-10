@@ -41,7 +41,7 @@ class PostsController < ApplicationController
     @posts = Post.search(params[:keyword])
   end
 
-
+j
   private
   def post_params
     params.require(:post).permit(:partner, :title, :image, :content ).merge(user_id: current_user.id)
