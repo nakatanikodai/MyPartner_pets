@@ -24,7 +24,7 @@ class PostsController < ApplicationController
     post.update(update_params)
     redirect_to post_path(post.id)
   end
-
+f
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
